@@ -1,0 +1,78 @@
+\version "2.24.3"
+
+\header {
+    title = "Die Wahrheit singt man laut"
+}
+
+\score {
+    \new PianoStaff <<
+        \new Staff = "upper" \with {
+            instrumentName = "Klavier"
+            midiInstrument = "acoustic grand"
+        }
+        { \clef treble \key g \major \time 4/4 \global \dynamic_settings
+
+            \relative c' {
+                % Measure 1
+                r8 d4 e8 | g4. g8 |
+                % Measure 2
+                f4 e | d2 |
+                % Measure 3
+                r8 g4 a8 | b4. b8 |
+                % Measure 4
+                a4 g | f#2 |
+                % Measure 5
+                \override LyricHyphen.minimum-length = #1.0
+                g4. a8 | b4 a |
+                % Measure 6
+                g2 \staccato r4 |
+                % Measure 7
+                \override LyricHyphen.minimum-length = #0.5
+                b4. b8 | a4 g |
+                % Measure 8
+                f#2. | r4 |
+            }
+        }
+
+        \new Lyrics \with { alignBelowContext = "upper" }
+        \lyricmode {
+            % Verse 1
+            Aus al -- ler Mund an al -- ler Ohr wird sin -- gend an ver -- traut, was sich uns jetzt als wahr stellt vor. Die
+            % Verse 2
+            Ein stim -- mig sin -- gen wir im Chor aus Stim -- men auf ge -- baut, die Stim -- men uns -- res Lie -- des vor. Die
+            % Verse 3
+            Im Ein -- klang, hör -- bar hoch em -- por er klingt im Lie -- der -- laut, was sich uns wich -- tig wahr er kohr. Die
+            % Verse 4
+            Ver -- eint und stark, frei von Ter -- ror, har -- mo -- nisch und ver -- traut und laut -- bar im Ver -- bund so -- nor. Die
+        }
+
+        \new Staff = "lower" \with {
+            instrumentName = ""
+            midiInstrument = "acoustic grand"
+        }
+        { \clef bass \key g \major \time 4/4
+
+            \relative c {
+                % Measure 1
+                g4 g' | d4 d' |
+                % Measure 2
+                c4 c' | g2 |
+                % Measure 3
+                c4 c' | g4 g' |
+                % Measure 4
+                d4 d' | g2 |
+                % Measure 5
+                c4 c' | g4 g' |
+                % Measure 6
+                d2 r4 |
+                % Measure 7
+                g4 g' | d4 d' |
+                % Measure 8
+                g2. | r4 \bar "|."
+            }
+        }
+    >>
+
+    \layout { }
+    \midi { }
+}
