@@ -1,7 +1,7 @@
-\version "2.24.3"
+tt-Vresion\version "2.24.3"
 
 \header {
-    title = "Ich möchte gern ein Spiel-Lied sing'n"
+    title = "Spiel-Lied (Duett-Version)"
     composer = ""
     tagline = ""
 }
